@@ -47,8 +47,3 @@ get_engine() {
 	local engine_var="$1"
 	tmux show-options -g | grep -i "^@open-$engine_var" | cut -d ' ' -f2 | xargs
 }
-
-tmux_version="$(tmux -V | cut -d ' ' -f 2 | sed 's/next-//'))"
-tmux-is-at-least() {
-	return 1
-}
